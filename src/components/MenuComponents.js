@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Media } from 'reactstrap';
+import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
+import alberto from '.assets/alberto';
 
 
 class Menu extends Component {
@@ -11,20 +12,21 @@ class Menu extends Component {
     render() {
 
         const menu = this.props.dishlar.map(ele => {
-            return (<div key={ele.id} className="col-12 mt-5">
-                <Media tag="li">
-                    <h4 className="col-5 col-md-3">{ele.name}</h4>
-                    <h6 className="col-7 col-md-9">{ele.description}</h6>
-                </Media>
+            return (<div key={ele.id} className="col-12 col-md-5 m-1">
+                <Card>
+                    <CardImg width="100%" src={alberto} alt={ele.name}>
+                        <CardImgOverlay>
+                            <CardTitle>{ele.name}</CardTitle>
+                        </CardImgOverlay>
+                    </CardImg>
+                </Card>
             </div>);
         });
 
         return (
             <div className="container">
                 <div className="row">
-                    <Media list >
-                        {menu}
-                    </Media>
+                    {menu}
                 </div>
             </div>
         );
