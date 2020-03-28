@@ -21,7 +21,7 @@ class App extends Component {
       <div>
         <Navbar dark color="primary" className="positioning fixed-top">
           <div className="container">
-            <NavbarBrand href="/">Restoran Bekzo</NavbarBrand>
+            <NavbarBrand href="/">Restoran Bekzo Origin</NavbarBrand>
           </div>
         </Navbar>
         <Menu dishlar={this.state.dishes}/>
