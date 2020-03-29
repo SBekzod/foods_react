@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import Menu from './components/MenuComponents';
-import Example from './components/NavBarObject';
-import Jumbo from './components/JumbotronObject';
 import './App.css';
 import { DISHES } from './shared/dishes';
 
-class App extends Component {
+class Apps extends Component {
 
   constructor(props) {
     super(props);
@@ -20,8 +18,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Example />
-        <Jumbo />
         <Menu dishlar={this.state.dishes}/>
       </div>
     );
@@ -29,4 +25,4 @@ class App extends Component {
 
 }
 
-export default App;
+export default Apps;
