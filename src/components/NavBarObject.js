@@ -22,15 +22,17 @@ const Example = (props) => {
   return (
     <div className="positioning">
       <Navbar className="coloring" light expand="md">
-        <NavbarBrand href="/">Restaurant bekzo</NavbarBrand>
+        <NavbarBrand href="/menu">
+          <img src="assets/logo.png" height="30" width="40" alt="GQ Bar"/>
+        </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="#">Home</NavLink>
+              <NavLink href="#"><span className="fa fa-home fa-lg"></span> Home</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#">About</NavLink>
+              <NavLink href="#"><span className="fa fa-info fa-lg"></span> About</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="/staff">Staff</NavLink>
@@ -47,8 +49,8 @@ const Example = (props) => {
                   Contacts
                 </DropdownItem>
                 <DropdownItem divider />
-                <DropdownItem>
-                  galery
+                <DropdownItem href="/form">
+                  HOT DISHES
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
