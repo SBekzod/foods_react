@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import Menu from './components/MenuComponents';
-import Example from './components/NavBarObject';
-import Header from './components/HeaderComponent';
-import Jumbo from './components/JumbotronObject';
-import Footer from './components/FooterCom';
-import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
 import { DISHES } from './shared/dishes';
+import { BrowserRouter } from 'react-router-dom';
+import Main from './components/MainCom';
 
 class App extends Component {
 
@@ -14,7 +10,6 @@ class App extends Component {
 
     this.state = {
       dishes: DISHES,
-      selectedFood: null
     };
 
   }
@@ -22,11 +17,12 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <Header />
-        <Menu dishlar={this.state.dishes} />
-        <Footer />
-      </div>
+      <BrowserRouter>
+        <div>
+          <Main dishlar={this.state.dishes} />
+        </div>
+      </BrowserRouter>
+
     );
   }
 

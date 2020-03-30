@@ -20,7 +20,7 @@ const Example = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
+    <div className="positioning">
       <Navbar className="coloring" light expand="md">
         <NavbarBrand href="/">Restaurant bekzo</NavbarBrand>
         <NavbarToggler onClick={toggle} />
@@ -31,6 +31,9 @@ const Example = (props) => {
             </NavItem>
             <NavItem>
               <NavLink href="#">About</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/staff">Staff</NavLink>
             </NavItem>
             <NavItem>
               <NavLink className="active" href="./Apps.js">Menu</NavLink>

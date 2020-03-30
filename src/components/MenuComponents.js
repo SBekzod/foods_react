@@ -1,8 +1,9 @@
 import React from 'react';
 import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
+import Jumbo from './JumbotronObject';
 
 
-    
+
 const Menu = (props) => {
 
     const menu = props.dishlar.map((ele) => {
@@ -18,11 +19,15 @@ const Menu = (props) => {
     });
 
     return (
-        <div className="container">
-            <div className="row">
-                {menu}
+        <div>
+            <Jumbo />
+            <div className="container">
+                <div className="row">
+                    {menu}
+                </div>
             </div>
         </div>
+
     );
 };
 
