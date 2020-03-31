@@ -19,7 +19,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div>
-          <Main dishlar={this.state.dishes} />
+          <Main dishlar={this.state.dishes}/>
         </div>
       </BrowserRouter>
 

@@ -12,28 +12,27 @@ function Itempresent(props) {
             <Jumbo />
             <div className="container">
                 <div className="row">
-                    <Breadcrumb>
+                    <Breadcrumb className="frame">
                         <BreadcrumbItem><Link to="/menu">Menu</Link></BreadcrumbItem>
                         <BreadcrumbItem active>{props.dish.name}</BreadcrumbItem>
                     </Breadcrumb>
-                    <div className="col-12">
-                        <h3>Menu</h3>
-                        <hr />
-                    </div>
+                
                 </div>
                 <div className="row">
                     <div className="col-12 col-md-6">
                         <Card key={props.dish.id} className="frame">
                             <CardImg width="100%" src={props.dish.image} alt={props.dish.name} />
-                            <CardImgOverlay>
-                                <CardTitle>{props.dish.name}</CardTitle>
-                            </CardImgOverlay>
                         </Card>
+                    </div>
+                    <div className="col-12 col-md-6">
+                        <h2>{props.dish.name}</h2>
+                        <h4>{props.dish.commenting}</h4>
                     </div>
                 </div>
             </div>
         </div>
     );
+
 };
 
 export default Itempresent;

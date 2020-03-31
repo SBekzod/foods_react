@@ -10,15 +10,13 @@ import Home from './HomeCom';
 import Itempresent from './ItemPresCom';
 
 
-const Main = (props) => {
+function Main(props) {
 
     const ChosenItem = ({ match }) => {
         return (
-            <Itempresent dish={props.dishlar.filter((ele) => ele.id === parseInt(match.params.dish.id, 10))[0]} />
+            <Itempresent dish={props.dishlar.filter((ele) => ele.id == match.params.id)[0]} />
         );
-        // {props.dishlar.filter((ele) => ele.id == match.params.dish.id)[0]}
     }
-
 
     return (
         <div>
@@ -33,10 +31,10 @@ const Main = (props) => {
                 <Redirect to="/menu" />
             </Switch>
             <Footer />
-        </div>
-
-
+        </div >
     );
+
+
 }
 
 export default Main;
