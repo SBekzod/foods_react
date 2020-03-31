@@ -15,20 +15,11 @@ class App extends Component {
 
   }
 
-  openClickedItem(eles) {
-    return(
-      <div>
-        <Item eles={eles}/>
-      </div>
-    );
-  }
-
-
   render() {
     return (
       <BrowserRouter>
         <div>
-          <Main dishlar={this.state.dishes} onClick={(ele) => this.openClickedItem(ele)} />
+          <Main dishlar={this.state.dishes} />
         </div>
       </BrowserRouter>
 
