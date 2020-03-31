@@ -49,3 +49,8 @@ address{
     top: 20px;
 }
 
+.frame {
+    position: relative;
+    bottom: 20px;
+}
+
