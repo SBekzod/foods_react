@@ -38,14 +38,14 @@ const Example = (props) => {
               <NavLink href="/staff">Staff</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="active" href="./Apps.js">Menu</NavLink>
+              <NavLink href="/menu">Menu</NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
                 Others
               </DropdownToggle>
               <DropdownMenu right>
-                <DropdownItem>
+                <DropdownItem href="/contact">
                   Contacts
                 </DropdownItem>
                 <DropdownItem divider />
