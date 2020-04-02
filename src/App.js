@@ -15,11 +15,24 @@ class App extends Component {
 
   }
 
+  openClickedItem(eles) {
+    return(
+      <div>
+        <Item eles={eles}/>
+      </div>
+    );
+  }
+
+
   render() {
     return (
       <BrowserRouter>
         <div>
+<<<<<<< HEAD
           <Main dishlar={this.state.dishes}/>
+=======
+          <Main dishlar={this.state.dishes} onClick={(ele) => this.openClickedItem(ele)} />
+>>>>>>> parent of e9a3d5e... waste
         </div>
       </BrowserRouter>
 
