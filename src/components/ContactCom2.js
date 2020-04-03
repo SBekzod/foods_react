@@ -6,34 +6,13 @@ class Contact extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            firstname: '',
-            lastname: '',
-            telnum: '',
-            email: '',
-            agree: false,
-            contactType: 'Tel.',
-            message: '',
-        };
-
-        this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleInputChange(event) {
-        const target = event.target;
-        const value = target.type === 'checkbox' ? target.checked : target.value;
-        const name = target.name;
-
-        this.setState({ [name]: value });
-    }
-
     handleSubmit(event) {
-        console.log('Current State is: ' + JSON.stringify(this.state));
-        alert('Current State is: ' + JSON.stringify(this.state));
+        alert("Current State is: "+this.firstnamelar.value+", "+this.lastname.value+", "+this.email.value+", "+this.agree.checked+", "+this.contactType.value+", "+this.message.value);
         event.preventDefault();
     }
-
 
 
     render() {
@@ -75,37 +54,33 @@ class Contact extends Component {
                             <FormGroup row>
                                 <Label htmlFor="firstname" md={2}>First Name</Label>
                                 <Col md={10}>
-                                    <Input type="text" id="firstname" name="firstname"
+                                    <Input type="text" id="firstname"
                                         placeholder="First Name"
-                                        value={this.state.firstname}
-                                        onChange={this.handleInputChange} />
+                                        innerRef={(input) => this.firstnamelar = input} />
                                 </Col>
                             </FormGroup>
                             <FormGroup row>
                                 <Label htmlFor="lastname" md={2}>Last Name</Label>
                                 <Col md={10}>
-                                    <Input type="text" id="lastname" name="lastname"
+                                    <Input type="text" id="lastname"
                                         placeholder="Last Name"
-                                        value={this.state.lastname}                                        
-                                        onChange={this.handleInputChange} />                                   
+                                        innerRef={(input) => this.lastname = input} />
                                 </Col>
                             </FormGroup>
                             <FormGroup row>
                                 <Label htmlFor="telnum" md={2}>Contact Tel.</Label>
                                 <Col md={10}>
-                                    <Input type="tel" id="telnum" name="telnum"
+                                    <Input type="tel" id="telnum"
                                         placeholder="Tel. Number"
-                                        value={this.state.telnum}                                      
-                                        onChange={this.handleInputChange} />
+                                        innerRef={(input) => this.telnum = input} />
                                 </Col>
                             </FormGroup>
                             <FormGroup row>
                                 <Label htmlFor="email" md={2}>Email</Label>
                                 <Col md={10}>
-                                    <Input type="email" id="email" name="email"
+                                    <Input type="email" id="email"
                                         placeholder="Email"
-                                        value={this.state.email}                                       
-                                        onChange={this.handleInputChange} />                                   
+                                        innerRef={(input) => this.email = input} />
                                 </Col>
                             </FormGroup>
                             <FormGroup row>
@@ -113,17 +88,13 @@ class Contact extends Component {
                                     <FormGroup check>
                                         <Label check>
                                             <Input type="checkbox"
-                                                name="agree"
-                                                checked={this.state.agree}
-                                                onChange={this.handleInputChange} /> {' '}
+                                                innerRef={(input) => this.agree = input} /> {' '}
                                             <strong>May we contact you?</strong>
                                         </Label>
                                     </FormGroup>
                                 </Col>
                                 <Col md={{ size: 3, offset: 1 }}>
-                                    <Input type="select" name="contactType"
-                                        value={this.state.contactType}
-                                        onChange={this.handleInputChange}>
+                                    <Input type="select" innerRef={(input) => this.contactType = input}>
                                         <option>Tel.</option>
                                         <option>Email</option>
                                     </Input>
@@ -132,10 +103,9 @@ class Contact extends Component {
                             <FormGroup row>
                                 <Label htmlFor="message" md={2}>Your Feedback</Label>
                                 <Col md={10}>
-                                    <Input type="textarea" id="message" name="message"
+                                    <Input type="textarea" id="message"
                                         rows="12"
-                                        value={this.state.message}
-                                        onChange={this.handleInputChange}></Input>
+                                        innerRef={(input) => this.message = input}></Input>
                                 </Col>
                             </FormGroup>
                             <FormGroup row>

@@ -32,7 +32,10 @@ const Example = (props) => {
               <NavLink href="/home"><span className="fa fa-home fa-lg"></span> Home</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/contact"><span className="fa fa-info fa-lg"></span> Contacts</NavLink>
+              <NavLink href="/contact"><span className="fa fa-info fa-lg"></span> CF Contacts</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/contact2"><span className="fa fa-info fa-lg"></span> UF Contacts</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="/staff">Staff</NavLink>
