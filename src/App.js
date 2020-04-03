@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { DISHES } from './shared/dishes';
 import { BrowserRouter } from 'react-router-dom';
 import Main from './components/MainCom';
-import Item from './components/NewClicked';
 
 class App extends Component {
 

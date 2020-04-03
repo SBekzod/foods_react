@@ -14,7 +14,7 @@ function Main(props) {
 
     const ChosenItem = ({ match }) => {
         return (
-            <Itempresent dish={props.dishlar.filter((ele) => ele.id == match.params.id)[0]} />
+            <Itempresent dish={props.dishlar.filter((ele) => ele.id === match.params.id)[0]} />
         );
     }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardImg, CardImgOverlay, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Card, CardImg, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import Jumbo from './JumbotronObject';
 import { Link } from "react-router-dom";
 
