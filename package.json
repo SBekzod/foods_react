@@ -10,8 +10,10 @@
     "bootstrap-social": "5.1.1",
     "font-awesome": "4.7.0",
     "react": "^16.13.1",
+    "react-beautiful-dnd": "^13.0.0",
     "react-dom": "^16.13.1",
     "react-popper": "0.9.2",
+    "react-redux-form": "1.16.8",
     "react-router-dom": "4.2.2",
     "react-scripts": "3.4.1",
     "reactstrap": "5.0.0"
