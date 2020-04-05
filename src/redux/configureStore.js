@@ -1,10 +1,13 @@
-import {createStore} from 'redux';
-import { Reducer, initialState } from './reducer'
+import {createStore, combineReducers} from 'redux';
+import {Rdishes} from './dishes';
+import {Rchef} from './chef';
 
 export const ConfigureStore = () => {
     const store = createStore(
-        Reducer, // reducer
-        initialState, // our initialState
+        combineReducers({
+            dishlar: Rdishes,
+            chef: Rchef            
+        })
     );
 
     return store;
