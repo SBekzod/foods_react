@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
     Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle
+    CardTitle, CardSubtitle, Button, Modal, ModalBodyProps, ModalHeader, ModalBody, Input, Form
 } from 'reactstrap';
 
 function RenderCard({ item }) {
@@ -18,19 +18,49 @@ function RenderCard({ item }) {
 
 }
 
-function Home(props) {
-    return (
-        <div className="container">
-            <div className="row">
-                <div className="col-12 col-md frame1">
-                    <RenderCard item={props.dish} />
-                </div>
-                <div className="col-12 col-md frame2">
-                    <h5>{props.chef.info}</h5>
+class Home extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+        }
+
+        this.clickedSubmit = this.clickedSubmit.bind(this);
+    }
+
+    clickedSubmit(event) {
+        // alert("This is client's opinion: " + this.opinion.value);
+        this.props.addScore(this.opinion);
+
+    }
+
+
+
+
+    render() {
+        return (
+            <div className="container">
+                <div className="row">
+                    <div className="col-12 col-md frame1">
+                        <RenderCard item={this.props.dish} />
+                    </div>
+                    <Form onSubmit={this.clickedSubmit} className="col-12 col-md frame2">
+                        <h5>{this.props.chef.info}</h5>
+                        <div className="row">
+                            <Input className="col-12" type="text" id="opinion"
+                                placeholder="Write your Opinion"
+                                innerRef={(input) => this.opinion = input} />
+                            <h4 className="col-md offset-1 frame4">Leave your score</h4>
+                            <Button type="submit" className="col-md frame3" color="success">success</Button>{' '}
+                        </div>
+                    </Form>
                 </div>
             </div>
-        </div>
-    );
+        );
+    }
+
+
 }
 
 export default Home;
