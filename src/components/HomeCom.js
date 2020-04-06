@@ -6,14 +6,18 @@ import {
 
 function RenderCard({ item }) {
     return (
-        <Card>
-            <CardImg src={item.image} alt={item.name} />
-            <CardBody>
-                <CardTitle>{item.name}</CardTitle>
-                {item.designation ? <CardSubtitle>{item.designation}</CardSubtitle> : null}
-                <CardText>{item.description}</CardText>
-            </CardBody>
-        </Card>
+        <div>
+            {/* <h2>This is: {item} </h2> */}
+            <Card key={item.id}>
+                <CardImg src={item.image} alt={item.name} />
+                <CardBody>
+                    <CardTitle>{item.name}</CardTitle>
+                    {item.designation ? <CardSubtitle>{item.designation}</CardSubtitle> : null}
+                    <CardText>{item.description}</CardText>
+                </CardBody>
+            </Card>
+        </div>
+
     );
 
 }
@@ -25,18 +29,14 @@ class Home extends Component {
 
         this.state = {
         }
-
-        this.clickedSubmit = this.clickedSubmit.bind(this);
+        // this.clickedSubmit = this.clickedSubmit.bind(this);
     }
 
-    clickedSubmit(event) {
-        // alert("This is client's opinion: " + this.opinion.value);
-        this.props.addScore(this.opinion);
+    // clickedSubmit(event) {
+    //     // alert("This is client's opinion: " + this.opinion.value);
+    //     this.props.addScore(this.opinion);
 
-    }
-
-
-
+    // }
 
     render() {
         return (
@@ -45,8 +45,7 @@ class Home extends Component {
                     <div className="col-12 col-md frame1">
                         <RenderCard item={this.props.dish} />
                     </div>
-                    <Form onSubmit={this.clickedSubmit} className="col-12 col-md frame2">
-                        <h5>{this.props.chef.info}</h5>
+                    <Form className="col-12 col-md frame2">
                         <div className="row">
                             <Input className="col-12" type="text" id="opinion"
                                 placeholder="Write your Opinion"

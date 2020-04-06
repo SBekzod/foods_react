@@ -1,32 +1,35 @@
 import * as ActionTypes from './ActionTypes';
 import { baseUrl } from '../shared/baseUrl';
+import { DISHES } from '../shared/dishes';
 
-export const addComment = (dishId, rating, author, comment) => ({
-    type: ActionTypes.ADD_COMMENT,
-    payload: {
-        dishId: dishId,
-        rating: rating,
-        author: author,
-        comment: comment
-    }
-});
+export const fetchDishes = () => (dispatch) => {
+    dispatch(dishesLoading());
 
-export const addScore = (mark) => ({
-    type: ActionTypes.ADD_SCORE,
-    payload: mark
+    return fetch(baseUrl + 'dishes')
+        .then(response => {
+            if (response.ok) return response;
+            else {
+                throw new Error('This is Error ' + response.status);
+            }
+        }, error => {
+            throw error;
+        })
+        .then(response => response.json())
+        .then(dishes => dispatch(addDishes(dishes)))
+        .catch(error => dispatch(dishesFailed(error.message)))
+}
+
+export const dishesLoading = () => ({
+    type: ActionTypes.DISHES_LOADING
 });
 
 export const addDishes = (dishes) => ({
-   type: ActionTypes.ADD_DISHES,
-   payload: dishes
+    type: ActionTypes.ADD_DISHES,
+    payload: dishes
 });
 
-export const fetchDishes = () => (dispatch) => {
-    return fetch(baseUrl + 'dishes')
-        .then(response => response.json)
-        .then(dishes => dispatch(addDishes(dishes)))
-}
-
-
-
+export const dishesFailed = (errMess) => ({
+    type: ActionTypes.DISHES_FAILED,
+    payload: errMess
+});
 

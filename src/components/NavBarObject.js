@@ -19,7 +19,7 @@ const Example = (props) => {
 
   const toggle = () => setIsOpen(!isOpen);
 
-  return (
+  return ( 
     <div className="positioning">
       <Navbar className="coloring" light expand="md">
         <NavbarBrand href="/menu">
@@ -32,6 +32,9 @@ const Example = (props) => {
               <NavLink href="/home"><span className="fa fa-home fa-lg"></span> Home</NavLink>
             </NavItem>
             <NavItem>
+              <NavLink href="/menu"><span className="fa fa-coffee fa-lg"></span> Menu</NavLink>
+            </NavItem>
+            <NavItem>
               <NavLink href="/contact"><span className="fa fa-info fa-lg"></span> CF Contacts</NavLink>
             </NavItem>
             <NavItem>
@@ -39,9 +42,6 @@ const Example = (props) => {
             </NavItem>
             <NavItem>
               <NavLink href="/staff">Staff</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/menu">Menu</NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
