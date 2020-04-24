@@ -11,6 +11,7 @@ import Home from './HomeCom';
 import Itempresent from './ItemPresCom';
 import { connect } from 'react-redux';
 import { fetchDishes } from '../redux/ActionCreators';
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 
 const mapStateToProps = state => ({
@@ -45,16 +46,20 @@ class Main extends Component {
         return (
             <div>
                 <Header />
-                <Switch>
-                    <Route path="/staff" component={Staff} />
-                    <Route path="/menu/:id" component={ChosenItem} />
-                    <Route exact path="/menu" component={() => <Menu dishlar={this.props.dishlar} />} />
-                    <Route path="/home" component={() => <Home dish={this.props.dishlar.dishes[0]} />} />
-                    <Route path="/form" component={Forms} />
-                    <Route path="/contact" component={Contact} />
-                    <Route path="/contact2" component={Contact2} />
-                    <Redirect to="/menu" />
-                </Switch>
+                <TransitionGroup>
+                    <CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
+                        <Switch location={this.props.location}>
+                            <Route path="/staff" component={Staff} />
+                            <Route path="/menu/:id" component={ChosenItem} />
+                            <Route exact path="/menu" component={() => <Menu dishlar={this.props.dishlar} />} />
+                            <Route path="/home" component={() => <Home dish={this.props.dishlar.dishes[0]} />} />
+                            <Route path="/form" component={Forms} />
+                            <Route path="/contact" component={Contact} />
+                            <Route path="/contact2" component={Contact2} />
+                            <Redirect to="/menu" />
+                        </Switch>
+                    </CSSTransition>
+                </TransitionGroup>
                 <Footer />
             </div >
         );
