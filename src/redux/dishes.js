@@ -1,5 +1,4 @@
 import * as ActionTypes from './ActionTypes';
-import { DISHES } from '../shared/dishes';
 
 export const Rdishes = (state = { isLoading: false, errMess: null, dishes: [] }, action) => {
     switch (action.type) {

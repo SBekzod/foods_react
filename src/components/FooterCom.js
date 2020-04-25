@@ -10,22 +10,22 @@ const Footer = (props) => {
                         <h5>Links</h5>
                         <ul className="list-unstyled">
                             <li><Link to="/menu">Home</Link></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="/staff">Staff</a></li>
-                            <li><a href="/menu">Menu</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><Link to="/aboutus">About</Link></li>
+                            <li><Link to="/staff">Staff</Link></li>
+                            <li><Link to="/menu">Menu</Link></li>
+                            <li><Link to="contact2">Contact</Link></li>
                         </ul>
                     </div>
                     <div className="col-7 col-sm-5">
                         <h5>Our Address</h5>
                         <address>
-                            121, Clear Water Bay Road<br />
-		              Clear Water Bay, Kowloon<br />
-		              HONG KONG<br />
-                            <i className="fa fa-phone fa-lg"></i>: +852 1234 5678<br />
-                            <i className="fa fa-fax fa-lg"></i>: +852 8765 4321<br />
-                            <i className="fa fa-envelope fa-lg"></i>: <a href="mailto:confusion@food.net">
-                                confusion@food.net</a>
+                            102 Daegu city<br />
+		              North West region<br />
+		              Bukbu<br />
+                            <i className="fa fa-phone fa-lg"></i>: 010 2234 0440 <br />
+                            <i className="fa fa-fax fa-lg"></i>: 010 2234 04440<br />
+                            <i className="fa fa-envelope fa-lg"></i>: <a href="mailto:bekzodsanakulov89@gmail.com">
+                                bekzodsanakulov89@gmail.com</a>
                         </address>
                     </div>
                     <div className="col-12 col-sm-4 align-self-center">

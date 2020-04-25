@@ -30,7 +30,6 @@ function Menu(props) {
     if (props.dishlar.isLoading) {
         return (
             <div>
-                <Jumbo />
                 <div className="container">
                     <div className="row">
                         <div className="col-12 col-md-4 offset-5">
@@ -45,7 +44,6 @@ function Menu(props) {
     else if (props.dishlar.errMess) {
         return (
             <div>
-                <Jumbo />
                 <div className="container">
                     <div className="row">
                         <div className="col-12 col-md-4 offset-5">
@@ -59,7 +57,6 @@ function Menu(props) {
     else {
         return (
             <div>
-                <Jumbo />
                 <div className="container">
                     <div className="row">
                         <Breadcrumb>
