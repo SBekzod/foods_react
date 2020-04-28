@@ -23,7 +23,16 @@ function Menu(props) {
     const menu = props.dishlar.dishes.map((ele) => {
         return (
             <div className="col-12 col-md-6">
+<<<<<<< HEAD
                 <RenderMenuItem eles={ele} />
+=======
+                <Card key={ele.id} onClick={() => props.onClick(ele)}>
+                    <CardImg width="100%" src={ele.image} alt={ele.name} />
+                    <CardImgOverlay>
+                        <CardTitle>{ele.name}</CardTitle>
+                    </CardImgOverlay>
+                </Card>
+>>>>>>> parent of e9a3d5e... waste
             </div>);
     });
 
@@ -74,9 +83,13 @@ function Menu(props) {
                 </div>
             </div>
 
+<<<<<<< HEAD
         );
     }
 
+=======
+    );
+>>>>>>> 82aaaabe51fc724a77a50edb40e5c55628efddc9
 }
 
 export default Menu;
